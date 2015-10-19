@@ -33,3 +33,6 @@
 
 #tilde files
 *~/
+
+#image file
+*.iso
