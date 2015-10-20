@@ -32,7 +32,7 @@
 *.dSYM
 
 #tilde files
-*~/
+*~
 
 #image file
 *.iso
