@@ -2,7 +2,7 @@
 	MAGIC_NUMBER 	equ 0x1BADB002		; define the magic number constant
 	FLAGS		equ 0x0			; multiboot flags
 	CHECKSUM	equ -MAGIC_NUMBER 	; calculate the checksum
-	extern 		sum_of_three
+	extern 		fb_write_test
 					; (magic number + checksum + flags should equals 0)
 	KERNEL_STACK_SIZE equ 4096	; size of stack in bytes
 
@@ -19,9 +19,6 @@
 	dd CHECKSUM			; and the checksum
 
 	loader:					; the loader label (defined as entry point to the linker script)
-	push dword 3
-	push dword 2
-	push dword 1
-	call sum_of_three
+	call fb_write_test
 	.loop:
 	jmp .loop			; loop forever
